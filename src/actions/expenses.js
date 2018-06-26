@@ -8,7 +8,8 @@ export const addExpense = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             description = '',
             notes = '', 
@@ -16,7 +17,7 @@ export const startAddExpense = (expenseData = {}) => {
             createdAt = 0
         } = expenseData;
         const expense = {description, notes, amount, createdAt};
-        return database.ref('expenses').push(expense).then((ref) => {
+        return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
             dispatch(addExpense({
                id: ref.key,
                ...expense 
@@ -32,11 +33,32 @@ export const editExpense = (id, updates) => ({
     updates
 });
 
+//Start Edit Expense *Start* means for firebase data
+export const startEditExpense = (id, updates) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses/${id}`).update(updates).then((ref) => {
+            dispatch(editExpense(id, updates));
+        });
+    };
+};
+
 //Remove Expense 
 export const removeExpense = ({id} = {}) => ({
     type: 'REMOVE_EXPENSE',
     id
 });
+
+//Start Remove Expense
+
+export const startRemoveExpense = ({id} = {}) => {
+    return (dispatch, getState) => {
+       const uid = getState().auth.uid;
+       return database.ref(`users/${uid}/expenses/${id}`).remove().then((ref) => {
+           dispatch(removeExpense({ id }));
+       });
+    };
+};
 
 // Set Expenses
 export const setExpenses = (expenses) => ({
@@ -45,8 +67,9 @@ export const setExpenses = (expenses) => ({
 }); 
 
 export const startSetExpenses = () => {
-    return (dispatch) => {
-        return database.ref('expenses').once('value').then((snapshot) => {  //.once() grabs the value of data just once time
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {  //.once() grabs the value of data just once time
             const expenses = [];
             snapshot.forEach((childSnapshot)=>{
                 expenses.push({

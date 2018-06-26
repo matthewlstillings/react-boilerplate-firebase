@@ -2,6 +2,7 @@
 
 import * as firebase from 'firebase'; //takes all of named exports from firebase nodes and dumbs them on new "firebase" variable
 
+
 //Intialize Firebase
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -16,5 +17,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, database as default };
+
+export { firebase, googleAuthProvider, database as default };
