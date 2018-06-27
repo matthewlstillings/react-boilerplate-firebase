@@ -1,8 +1,6 @@
 @import './base/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,600,800,900');
 @import './base/base.scss';
 
-li {
-    border-bottom: 1px solid black;
-} 
-
+//Components
+@import './components/login.scss';
