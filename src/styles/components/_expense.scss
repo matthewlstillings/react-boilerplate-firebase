@@ -1,0 +1,34 @@
+.expense {
+    align-items: center;
+    background: $light-primary;
+    border-radius: 0 100px 100px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2rem;
+    padding: 1rem 0 1rem 2rem;
+    width:90%;
+}
+
+.expense__details {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.expense__amount {
+    font-weight: 800;
+    color: $secondary;
+    margin-bottom: 0;
+}
+
+.expense__description {
+    color: white;
+    margin-top: .5rem;
+}
+
+.expense__date {
+    color: lighten($light-primary, 20%);
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}

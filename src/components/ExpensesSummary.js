@@ -8,8 +8,8 @@ export const ExpenseSummary = (props) => {
     const expenseWord = props.expenseCount === 1 ? 'expense' : 'expenses';
     const expenseSummaryFormatted = numeral(props.expensesSummary).format('$0,0.00'); //not dividing here might break other places, trying dividing by 100 here instead of selector
     return (
-        <div>
-            <h3>You are viewing {props.expenseCount} {expenseWord}, totalling {expenseSummaryFormatted}.</h3>
+        <div className="expense-summary__container">
+            <h3 className="expense-summary">Expenses: <span className="expense-summary__number">{props.expenseCount}</span></h3> <h3 className="expense-summary"> Total: <span className="expense-summary__number">{expenseSummaryFormatted}</span></h3>
         </div>
     );
 };

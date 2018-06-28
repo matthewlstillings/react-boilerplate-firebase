@@ -5,15 +5,17 @@ import numeral from 'numeral';
 
 
 export const Expense = ({id, dispatch, description, amount, createdAt}) => (
-        <li>
-            <Link to={`/edit/${id}`}>
-                <h3>{description}</h3>
-            </Link>
-            <p>{numeral(amount / 100).format('$0,0.00')}</p>
-            <p>{moment(createdAt).format('MMMM Do, YYYY')}</p>
-        </li>
+        <Link to={`/edit/${id}`} className="expense__link">
+            <li className="expense">
+                <div className="expense__details">
+                    <h2 className="expense__amount">-{numeral(amount / 100).format('$ 0,0.00')}</h2>
+                    <p className="expense__description">{description}</p>
+                </div>
+                <p className="expense__date">{moment(createdAt).format('MMMM Do, YYYY')}</p>
+            </li>
+        </Link>
 );
 
 
 
-export default Expense; //Maybe Fix this later?
+export default Expense; 

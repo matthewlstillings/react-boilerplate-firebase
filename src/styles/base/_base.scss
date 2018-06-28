@@ -3,16 +3,10 @@ html {
 }
 
 body {
-    background: rgba(0,0,0,1);
-    background: -moz-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(31,30,31,1) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(31,30,31,1)));
-    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(31,30,31,1) 100%);
-    background: -o-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(31,30,31,1) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(31,30,31,1) 100%);
-    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(31,30,31,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1f1e1f', GradientType=1 );
+    background: $primary;
     font-family: 'Nunito Sans', sans-serif;
     font-size: $medium-size;
+    margin: 0;
 }
 
 button {
@@ -36,5 +30,11 @@ button:disabled {
 }
 
 ul {
+    padding: 0;
     list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }

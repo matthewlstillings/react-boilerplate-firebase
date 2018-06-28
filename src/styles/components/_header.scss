@@ -1,0 +1,67 @@
+.header__container {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: $white;
+}
+
+.mobile-menu {
+    font-size:2rem;
+    padding: 1rem;
+    width: 5%;
+}
+
+.mobile-menu__icon {
+    color: $secondary;
+    position: relative;
+    z-index: -40;
+}
+
+.header__title {
+    font-weight: 900;
+    letter-spacing: .3rem;
+    margin-top: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.header__desktop-nav {
+    display: none;
+}
+
+.header__mobile-nav {
+    background: lighten($primary, 20%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: -100%;
+    position: absolute;
+    top: 9.5rem;
+    transition: .5s left ease;
+    width: 100%;
+    z-index: 10;
+}
+
+.header__mobile-nav.show {
+    left: 0%;
+}
+
+.header__mobile-nav > * {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+.logout-btn {
+    display: none;
+}

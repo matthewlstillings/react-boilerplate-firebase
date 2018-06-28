@@ -1,0 +1,9 @@
+.expense-summary__container {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.expense-summary__number {
+    color: $green;
+}

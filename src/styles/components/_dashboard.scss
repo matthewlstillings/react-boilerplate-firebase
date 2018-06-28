@@ -1,0 +1,78 @@
+.budget-dashboard__filters {
+    width: 100%;
+}
+
+.budget-dashboard__text-filter {
+    border: none;
+    box-shadow: none;
+    background: $light-primary;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    margin:0;
+    outline: none;
+    padding-left: 1rem;
+    width: 75%;
+    &::placeholder {
+        color: white;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+}
+
+.budget-dashboard__sort__container {
+    background: $secondary;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    padding-left: 1rem;
+    width: 25%;
+}
+
+.budget-dashboard__sort {
+    background: transparent;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    border: none;
+    box-shadow: none;
+    margin:0;
+    outline: none;
+    margin-left: .5rem;
+    width: 7rem;
+}
+
+.sort-drop {
+    white-space: nowrap;
+    border: none;
+    box-shadow: none;
+    color: black;
+    outline: none;
+}
+
+.filters__container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.DateRangePicker {
+    border: none;
+    width: 100%;
+    & > * {
+        width:100%;
+    }
+}
+
+.DateRangePickerInput {
+   // background: transparent !important;
+    border: none !important;
+    width: 100%;
+}
+
+.DateInput {
+    font-size: 2rem !important;
+    //background: transparent !important;
+    width: 10rem !important;
+}
+
+
+
