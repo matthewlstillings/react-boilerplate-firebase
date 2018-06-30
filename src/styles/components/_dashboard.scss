@@ -11,7 +11,7 @@
     margin:0;
     outline: none;
     padding-left: 1rem;
-    width: 75%;
+    width: 100%;
     &::placeholder {
         color: white;
         font-family: 'Nunito Sans', sans-serif;
@@ -23,8 +23,10 @@
     color: white;
     font-weight: 600;
     display: flex;
+    justify-content: center;
+    max-width: 165px;
     padding-left: 1rem;
-    width: 25%;
+    width: 45%;
 }
 
 .budget-dashboard__sort {
@@ -37,7 +39,6 @@
     margin:0;
     outline: none;
     margin-left: .5rem;
-    width: 7rem;
 }
 
 .sort-drop {
@@ -46,6 +47,7 @@
     box-shadow: none;
     color: black;
     outline: none;
+    
 }
 
 .filters__container {
@@ -53,7 +55,7 @@
     flex-direction: row;
 }
 
-
+///////////////////////Date Range Picker
 .DateRangePicker {
     border: none;
     width: 100%;
@@ -63,16 +65,38 @@
 }
 
 .DateRangePickerInput {
-   // background: transparent !important;
+    align-items: center;
     border: none !important;
+    display: flex !important;
+    justify-content: space-between;
     width: 100%;
 }
 
 .DateInput {
-    font-size: 2rem !important;
-    //background: transparent !important;
+    font-size: 1.5rem !important;
+    text-align: center;
     width: 10rem !important;
 }
 
+.DateInput__display-text {
+    padding: 0 !important;
+}
 
+///////////////////// Responsive //////////////////////////////////////
+
+@media (min-width: $desktop-breakpoint) {
+    .budget-dashboard__filters {
+        display: flex;
+    }
+    .filters__container {
+        flex-basis: 50%;
+    }
+    .DateRangePicker {
+        flex-basis: 50%;
+    }
+     .DateRangePicker {
+        padding: 4.4px 0;
+        background: white;
+    }
+}
 

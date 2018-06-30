@@ -1,11 +1,15 @@
+.expense-list {
+    margin: 0;
+}
+
 .expense {
     align-items: center;
-    background: $light-primary;
+    background: lighten($light-primary, 5%);
     border-radius: 0 100px 100px 0;
     display: flex;
     justify-content: space-between;
-    margin: 0 0 2rem;
-    padding: 1rem 0 1rem 2rem;
+    margin: 0 0 1rem;
+    padding: 0rem 0 0rem 2rem;
     width:90%;
 }
 

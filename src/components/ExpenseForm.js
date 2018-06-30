@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from "moment";
 import {SingleDatePicker} from 'react-dates';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTag, faCalendar, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class ExpenseForm extends React.Component {
@@ -55,37 +57,55 @@ export default class ExpenseForm extends React.Component {
     }
     render () {
         return (
-            <div>
+            <div className="expense-form__container">
                 {this.state.error === 'error' && <p>Please provide a description and amount</p>}
-                <form onSubmit={this.onSubmit}>
-                   <input 
+                <form onSubmit={this.onSubmit} className="expense-form">
+                    
+                    <input 
                     type="text"
                     placeholder="Description"
                     autoFocus
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
-                   />
-                   <input 
-                    type="text"
-                    placeholder="Amount"
-                    value={this.state.amount}
-                    onChange={this.onAmountChange}
-                   />
-                   <SingleDatePicker 
-                    date={this.state.createdAt}
-                    onDateChange={this.onDateChange}
-                    focused={this.state.focused}
-                    onFocusChange={this.onFocusChange}
-                    numberOfMonths={1}
-                    isOutsideRange={()=> false}
-                   />
-                   <textarea
-                    placeholder="Notes"
-                    value={this.state.notes}//This might need to be changed to "notes"
-                    onChange={this.onNotesChange}
-                   >
-                   </textarea> 
-                   <button>Add Expense</button>
+                    className="expense-form__description"
+                    name="text"
+                    />
+                    <div className="expense-form__separator">
+                        <label htmlFor="amount" className="expense-for__input-label"><FontAwesomeIcon icon={faTag}/></label>
+                        <input 
+                            type="text"
+                            placeholder="Amount"
+                            value={this.state.amount}
+                            onChange={this.onAmountChange}
+                            className="expense-form__amount"
+                            name="amount"
+                        />
+                    </div>
+
+                    <div className="expense-form__separator">
+                        <label htmlFor="date" className="expense-for__input-label"><FontAwesomeIcon icon={faCalendar}/></label>
+                        <SingleDatePicker 
+                            date={this.state.createdAt}
+                            onDateChange={this.onDateChange}
+                            focused={this.state.focused}
+                            onFocusChange={this.onFocusChange}
+                            numberOfMonths={1}
+                            isOutsideRange={()=> false}
+                    />
+                    </div>
+
+                    <div className="expense-form__separator">
+                        <label htmlFor="notes" className="expense-for__input-label"><FontAwesomeIcon icon={faStickyNote}/></label>
+                        <input
+                        placeholder="Notes"
+                        value={this.state.notes}//This might need to be changed to "notes"
+                        onChange={this.onNotesChange}
+                        className="expense-form__notes"
+                        name="notes"
+                        >
+                        </input> 
+                    </div>
+                    <button className="expense-form__btn">Add Expense</button>
                 </form>
             </div>
         )

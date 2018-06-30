@@ -37,7 +37,7 @@ const AppRouter = () => (
                     component={EditPage}
                     
                 />
-                <Route
+                <PrivateRoute
                     path="/help"
                     component={HelpPage}
                     

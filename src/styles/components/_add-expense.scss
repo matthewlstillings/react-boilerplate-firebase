@@ -1,0 +1,69 @@
+.add-expense__title, .edit-expense__title {
+    text-align: center;
+    color: white;
+}
+
+.expense-form__container {
+    margin: auto;
+    width: 90%;
+}
+
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    & > * {
+        margin: 0;
+        width: 100%;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.expense-form__separator {
+    align-items: center;
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: left;
+    label {
+        font-size: 1.5rem;
+        color: lighten($primary, 30%);
+        width: 7%;
+        margin-bottom: 1.5rem;
+    }
+    input {
+        @include input-default-remove;
+        color: white;
+        padding: 1rem 0;
+        width: 100%;
+        margin: 0 auto 1.5rem .5rem;
+        border-bottom: .8px solid lighten($secondary, 10%);
+        &::placeholder {
+            @include expense-form-input-placeholder;
+        }
+    }
+}
+
+.expense-form__description {
+    color: white;
+    font-family: $main-font;
+    margin: 0 auto 2rem;
+    border-bottom: .8px solid lighten($secondary, 10%);
+    padding: .5rem 0 .5rem 1rem;
+    outline: none;
+    &::placeholder {
+        color: lighten($primary, 30%);
+        font-family: $main-font;
+        font-weight: 600;
+    }
+    &:hover {
+        border-bottom: 1.5px solid $secondary;
+    }
+}
+
+
+//////////// Edit Expense
+
+
