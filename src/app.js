@@ -32,8 +32,17 @@ const renderApp = () => {
     }
 };
 
+const loader = (
+    <div className="loader__container">
+        <div className="loader">
+            <div className="circle is-red"></div>
+            <div className="circle is-green"></div>
+        </div>
+    </div>
+);
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root')); 
+
+ReactDOM.render(loader, document.getElementById('root')); 
 
 
 //Login Actions

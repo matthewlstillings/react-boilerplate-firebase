@@ -2,7 +2,7 @@ import React from 'react';
 import moment from "moment";
 import {SingleDatePicker} from 'react-dates';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTag, faCalendar, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { faTag, faCalendar, faStickyNote, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class ExpenseForm extends React.Component {
@@ -17,6 +17,7 @@ export default class ExpenseForm extends React.Component {
             error: ''
         };
     }
+    
     
     onDescriptionChange = (e) => {
         const description = e.target.value;
@@ -41,6 +42,15 @@ export default class ExpenseForm extends React.Component {
     onFocusChange = ({focused}) => {
         this.setState(()=>({focused}));
     };
+    componentDidMount = () => {
+        let intervalId = setInterval(() => {this.changeError()}, 5000);
+    }
+    changeError = () => {
+        this.setState(()=>({error: ''}));
+    } 
+    componentDidUpdate = () => {
+        console.log(this.state.error);
+    }
     onSubmit = (e) => {
         e.preventDefault();
         if (!this.state.description || !this.state.amount) {
@@ -58,20 +68,23 @@ export default class ExpenseForm extends React.Component {
     render () {
         return (
             <div className="expense-form__container">
-                {this.state.error === 'error' && <p>Please provide a description and amount</p>}
+               
                 <form onSubmit={this.onSubmit} className="expense-form">
-                    
-                    <input 
-                    type="text"
-                    placeholder="Description"
-                    autoFocus
-                    value={this.state.description}
-                    onChange={this.onDescriptionChange}
-                    className="expense-form__description"
-                    name="text"
-                    />
                     <div className="expense-form__separator">
-                        <label htmlFor="amount" className="expense-for__input-label"><FontAwesomeIcon icon={faTag}/></label>
+                        <label htmlFor="text" className="expense-for__input-label"><FontAwesomeIcon icon={faTag}/></label>
+                        <input 
+                        type="text"
+                        placeholder="Description"
+                        autoFocus
+                        value={this.state.description}
+                        onChange={this.onDescriptionChange}
+                        className="expense-form__description"
+                        name="text"
+                        autoComplete="off"
+                        />
+                    </div> 
+                    <div className="expense-form__separator">
+                        <label htmlFor="amount" className="expense-for__input-label"><FontAwesomeIcon icon={faDollarSign}/></label>
                         <input 
                             type="text"
                             placeholder="Amount"
@@ -79,6 +92,7 @@ export default class ExpenseForm extends React.Component {
                             onChange={this.onAmountChange}
                             className="expense-form__amount"
                             name="amount"
+                            autoComplete="off"
                         />
                     </div>
 
@@ -102,11 +116,13 @@ export default class ExpenseForm extends React.Component {
                         onChange={this.onNotesChange}
                         className="expense-form__notes"
                         name="notes"
+                        autoComplete="off"
                         >
                         </input> 
                     </div>
                     <button className="expense-form__btn">Add Expense</button>
                 </form>
+                {this.state.error === 'error' && <p className="expense-error">Please provide a description and amount</p>}
             </div>
         )
     }

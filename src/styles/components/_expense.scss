@@ -16,19 +16,18 @@
 .expense__details {
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
 .expense__amount {
     font-weight: 800;
     color: $secondary;
-    margin-bottom: 0;
+    
 }
 
 .expense__description {
     color: white;
-    margin-top: .5rem;
+    margin-left: 1.4rem;
 }
 
 .expense__date {

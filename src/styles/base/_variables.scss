@@ -36,3 +36,21 @@ $main-font: 'Nunito Sans', sans-serif;
     font-family: $main-font;
     font-weight: 600;
 }
+
+@mixin button-click {
+    -webkit-box-shadow: inset 0px 0px 19px -4px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 19px -4px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 19px -4px rgba(0,0,0,1);
+}
+
+@mixin button-defaults {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 10px 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    font-family: $main-font;
+    outline: none;
+}
