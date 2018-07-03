@@ -12,14 +12,17 @@ export const ExpenseSummary = (props) => {
     const budgetLeftFormatted = numeral(budgetLeft).format('$0,0.00'); 
     return (
         <div className="expense-summary__container">
-            <h5 className="expense-summary">Viewing <span className="expense-summary__number">{props.expenseCount}</span> {expenseWord}.</h5> 
-            <h3 className="expense-summary"> Total: <span className="expense-summary__number">{expenseSummaryFormatted}</span></h3>
-            <h3 className="expense-summary"> Budget: <span className="expense-summary__number">{budgetAmount}</span></h3>
-            <h3 className="expense-summary"> Budget Remaining:
-            {
-                 budgetLeft <= 0 ? <span className="expense-summary__number budget-negative"> {budgetLeftFormatted} </span> : <span className="expense-summary__number"> {budgetLeftFormatted} </span>
-            }   
-            </h3>
+            
+                <h3 className="expense-summary is-total">Viewing <span className="expense-summary__number">{props.expenseCount}</span> {expenseWord}.</h3> 
+                <h3 className="expense-summary"> Total: <span className="expense-summary__number">{expenseSummaryFormatted}</span></h3>
+            
+                <h3 className="expense-summary"> Budget: <span className="expense-summary__number">{budgetAmount}</span></h3>
+                <h3 className="expense-summary"> Budget Remaining:
+                {
+                    budgetLeft <= 0 ? <span className="expense-summary__number budget-negative"> {budgetLeftFormatted} </span> : <span className="expense-summary__number"> {budgetLeftFormatted} </span>
+                }   
+                </h3>
+            
         </div>
     );
 };
