@@ -7,3 +7,7 @@
 .expense-summary__number {
     color: $green;
 }
+
+.budget-negative {
+    color: darken($secondary, 15%);
+}

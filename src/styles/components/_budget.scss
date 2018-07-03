@@ -1,0 +1,27 @@
+.budget-form__container {
+    @include form-container-styles;
+}
+
+.budget-form {
+    @include form-styles;
+}
+
+.budget-form__description {
+    @include input-default-remove;
+    @include input-styles;
+    &::placeholder {
+        @include expense-form-input-placeholder;
+    }
+    &:focus {
+       @include expense-form-input-focus; 
+    }
+}
+
+.budget-form__btn {
+    @include button-defaults;
+    @include submit-button;
+    width: 100%;
+    &:active {
+        @include button-click;
+    }
+}

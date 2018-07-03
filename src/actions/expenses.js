@@ -26,6 +26,7 @@ export const startAddExpense = (expenseData = {}) => {
     };
 };
 
+
 //Edit Expense 
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
@@ -69,7 +70,7 @@ export const setExpenses = (expenses) => ({
 export const startSetExpenses = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {  //.once() grabs the value of data just once time
+        return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {  //.once() grabs the value of data just one time
             const expenses = [];
             snapshot.forEach((childSnapshot)=>{
                 expenses.push({

@@ -7,6 +7,12 @@ header {
     color: $white;
 }
 
+.header-mobile__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .mobile-menu {
     font-size:2rem;
     padding: 1rem;
@@ -16,7 +22,12 @@ header {
 .mobile-menu__icon {
     color: $secondary;
     position: relative;
-    
+}
+
+.add-expense__button {
+    color: $green;
+    font-size: 2rem;
+    margin: .1rem auto 0;
 }
 
 .header__title {
@@ -36,7 +47,7 @@ header {
     background: lighten($primary, 20%);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 87.2vh;
     left: -100%;
     position: absolute;
     top: 9.5rem;
@@ -78,10 +89,11 @@ header {
 
 @media (min-width: $desktop-breakpoint) {
     .header__desktop-nav {
+        display: flex;
         background: $light-primary;
         width: 100%;
-        display: flex;
     }
+    
     .logout-btn {
         display: flex;
         background: none;
@@ -93,10 +105,7 @@ header {
         margin-top: 0;
         padding: 2rem;
     }
-    .mobile-menu {
-        display: none;
-    }
-    .header__mobile-nav {
+    .header-mobile__container {
         display: none;
     }
 }

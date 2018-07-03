@@ -1,20 +1,15 @@
 /////// ******************************* For Both Edit Expense Page/Add Expense/ Expense Form ****************************//////////////
 
 .add-expense__title, .edit-expense__title {
-    text-align: center;
-    color: white;
+    @include form-title-styles;
 }
 
 .expense-form__container {
-    margin: auto;
-    width: 90%;
-    max-width: 350px;
+    @include form-container-styles;
 }
 
 .expense-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    @include form-styles;
     & > * {
         margin: 0;
         width: 100%;
@@ -38,33 +33,19 @@
     }
     input {
         @include input-default-remove;
-        color: white;
-        padding: 1rem 0 .5rem 1rem;
-        width: 100%;
-        margin: 0 auto .7rem .5rem;
-        border-bottom: .8px solid lighten($secondary, 10%);
-        border-radius: 0;
+        @include input-styles;
         &::placeholder {
             @include expense-form-input-placeholder;
         }
         &:focus {
-            box-shadow: 0px 1px 0 0 $secondary;
+            @include expense-form-input-focus;
         }
     }
 }
 
 
-
 .expense-form__btn {
-    background-color: $green;
-    border-radius: 2px;
-    color: $white;
-    font-family: $main-font;
-    font-weight: 800;
-    letter-spacing: .1rem;
-    margin: 1rem 0 0 auto;
-    padding: 1rem;
-    transition: background-color 1s ease;
+    @include submit-button;
     width: 92.5%;
 }
 

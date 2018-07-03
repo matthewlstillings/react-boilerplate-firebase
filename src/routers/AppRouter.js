@@ -4,6 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import BudgetDashboardPage from '../components/Dashboard';
 import AddExpensePage from '../components/AddExpensePage';
 import EditPage from '../components/EditExpensePage';
+import BudgetManager from '../components/Budget';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/404page';
 import PublicRoute from './PublicRoute';
@@ -35,6 +36,11 @@ const AppRouter = () => (
                 <PrivateRoute
                     path="/edit/:id"
                     component={EditPage}
+                    
+                />
+                <PrivateRoute
+                    path="/budget"
+                    component={BudgetManager}
                     
                 />
                 <PrivateRoute

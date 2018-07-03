@@ -17,8 +17,6 @@ export default class ExpenseForm extends React.Component {
             error: ''
         };
     }
-    
-    
     onDescriptionChange = (e) => {
         const description = e.target.value;
         this.setState(()=> ({description}));
@@ -112,7 +110,7 @@ export default class ExpenseForm extends React.Component {
                         <label htmlFor="notes" className="expense-for__input-label"><FontAwesomeIcon icon={faStickyNote}/></label>
                         <input
                         placeholder="Notes"
-                        value={this.state.notes}//This might need to be changed to "notes"
+                        value={this.state.notes}
                         onChange={this.onNotesChange}
                         className="expense-form__notes"
                         name="notes"
