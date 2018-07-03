@@ -5,7 +5,7 @@ import selectExpenses from '../selectors/expenses';
 import numeral from 'numeral';
 
 export const ExpenseSummary = (props) => {
-    const expenseWord = props.expenseCount === 1 ? 'expense' : 'expenses';
+    const expenseWord = props.expenseCount === 1 ? 'Expense' : 'Expenses';
     const expenseSummaryFormatted = numeral(props.expensesSummary).format('$0,0.00'); //not dividing here might break other places, trying dividing by 100 here instead of selector
     const budgetAmount = numeral(props.budgetAmount).format('$0,0.00'); 
     const budgetLeft = props.budgetAmount - props.expensesSummary;
@@ -13,10 +13,10 @@ export const ExpenseSummary = (props) => {
     return (
         <div className="expense-summary__container">
             
-                <h3 className="expense-summary is-total">Viewing <span className="expense-summary__number">{props.expenseCount}</span> {expenseWord}.</h3> 
-                <h3 className="expense-summary"> Total: <span className="expense-summary__number">{expenseSummaryFormatted}</span></h3>
+                <h3 className="expense-summary is-total">Viewing <span className="expense-summary__number">{props.expenseCount}</span> {expenseWord}</h3> 
+                <h3 className="expense-summary"> Total Expenses: <span className="expense-summary__number">{expenseSummaryFormatted}</span></h3>
             
-                <h3 className="expense-summary"> Budget: <span className="expense-summary__number">{budgetAmount}</span></h3>
+                <h3 className="expense-summary"> Budget Overall: <span className="expense-summary__number">{budgetAmount}</span></h3>
                 <h3 className="expense-summary"> Budget Remaining:
                 {
                     budgetLeft <= 0 ? <span className="expense-summary__number budget-negative"> {budgetLeftFormatted} </span> : <span className="expense-summary__number"> {budgetLeftFormatted} </span>
