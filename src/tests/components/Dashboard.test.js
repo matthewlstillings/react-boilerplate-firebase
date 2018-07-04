@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import BudgetDashboardPage from '../../components/Dashboard';
+import DashboardPage from '../../components/Dashboard';
 
 
 test('should rener dashboard page', () => {
-    const wrapper = shallow(<BudgetDashboardPage />);
+    const wrapper = shallow(<DashboardPage />);
     expect(wrapper).toMatchSnapshot();
 });

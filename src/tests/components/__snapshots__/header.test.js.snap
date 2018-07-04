@@ -2,35 +2,13 @@
 
 exports[`should render header correctly 1`] = `
 <header>
-  <h1>
-    Empty Wallet
+  <h1
+    className="header__title"
+  >
+    React Title
   </h1>
-  <NavLink
-    activeClassName="is-active"
-    ariaCurrent="true"
-    className="nav-link"
-    exact={true}
-    to="/dashboard"
-  >
-    Home
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    ariaCurrent="true"
-    className="nav-link"
-    to="/create"
-  >
-    Add Expense
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    ariaCurrent="true"
-    className="nav-link"
-    to="/help"
-  >
-    Help
-  </NavLink>
   <button
+    className="nav-link"
     onClick={[Function]}
   >
     Logout

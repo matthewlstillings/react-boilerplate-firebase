@@ -1,10 +1,7 @@
 import React from 'react';
 import {Router, Route, Switch, Link, NavLink} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'; 
-import BudgetDashboardPage from '../components/Dashboard';
-import AddExpensePage from '../components/AddExpensePage';
-import EditPage from '../components/EditExpensePage';
-import BudgetManager from '../components/Budget';
+import DashboardPage from '../components/Dashboard';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/404page';
 import PublicRoute from './PublicRoute';
@@ -25,22 +22,7 @@ const AppRouter = () => (
                 />
                 <PrivateRoute
                     path="/dashboard" 
-                    component={BudgetDashboardPage}
-                    
-                />
-                <PrivateRoute
-                    path="/create"
-                    component={AddExpensePage}
-                   
-                />
-                <PrivateRoute
-                    path="/edit/:id"
-                    component={EditPage}
-                    
-                />
-                <PrivateRoute
-                    path="/budget"
-                    component={BudgetManager}
+                    component={DashboardPage}
                     
                 />
                 <PrivateRoute
