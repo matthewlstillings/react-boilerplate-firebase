@@ -2,6 +2,12 @@
     margin: 0;
 }
 
+.no-expenses {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
 .expense {
     align-items: center;
     background: lighten($light-primary, 5%);

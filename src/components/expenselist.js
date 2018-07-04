@@ -8,7 +8,7 @@ export const ExpenseList = (props) => (
         <ul className="expense-list">
         {
           props.expenses.length === 0 ? (
-                <p>No Expenses</p>
+                <p className="no-expenses">No Expenses for this period.</p>
             ) : (
                 props.expenses.map((expense)=> {
                    return <Expense 
