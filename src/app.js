@@ -14,7 +14,7 @@ import {firebase} from './firebase/firebase';
 
 const store = configureStore();
 
-
+//Calls app using provider from react-store
 
 const jsx = (
     <Provider store = {store}>
@@ -22,10 +22,7 @@ const jsx = (
     </Provider>
 ); 
 
-
-
-
-
+//Renders application
 let hasRendered = false;
 const renderApp = () => {
     if (!hasRendered) {
@@ -33,6 +30,8 @@ const renderApp = () => {
          hasRendered = true;
     }
 };
+
+//Loader Code - Could add to own component
 
 const loader = (
     <div className="loader__container">
