@@ -9,7 +9,7 @@ import './styles/styles.scss';
 import { setTimeout } from 'timers';
 import moment from 'moment';
 import 'react-dates/lib/css/_datepicker.css';
-import {firebase} from './firebase/firebase';
+//import {firebase} from './firebase/firebase';
 
 
 const store = configureStore();
@@ -44,7 +44,9 @@ const loader = (
 
 
 ReactDOM.render(loader, document.getElementById('root')); 
+renderApp();
 
+{/*
 
 //Login Actions
 firebase.auth().onAuthStateChanged((user)=>{ //Firebase Functions
@@ -62,5 +64,5 @@ firebase.auth().onAuthStateChanged((user)=>{ //Firebase Functions
     }
 })
 
-
+*/}
 

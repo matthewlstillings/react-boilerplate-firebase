@@ -1,5 +1,5 @@
 //allows us to connect to firebase  
-
+{/*
 import * as firebase from 'firebase'; //takes all of named exports from firebase nodes and dumbs them on new "firebase" variable
 
 
@@ -21,3 +21,4 @@ const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 
 export { firebase, googleAuthProvider, database as default };
+*/}
